@@ -54,10 +54,10 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
   return (
     <div className="cv-print-area">
       {/* Screen: backdrop + centered modal */}
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-neutral-950/85 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 print:static print:bg-white print:overflow-visible">
-        <div className="relative bg-white text-neutral-900 rounded-lg w-full max-w-4xl max-h-[92vh] overflow-y-auto shadow-2xl border border-neutral-300 print:border-none print:shadow-none print:max-h-none print:rounded-none print:w-full print:max-w-none">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-neutral-950/85 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
+        <div className="relative bg-white text-neutral-900 rounded-lg w-full max-w-4xl max-h-[92vh] overflow-y-auto shadow-2xl border border-neutral-300">
           {/* Modal Top Control Bar (Hidden on print) */}
-          <div className="sticky top-0 z-10 bg-neutral-100/95 backdrop-blur-md px-6 py-3 border-b border-neutral-300 flex items-center justify-between print:hidden">
+          <div className="print-hidden sticky top-0 z-10 bg-neutral-100/95 backdrop-blur-md px-6 py-3 border-b border-neutral-300 flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
               <FileText className="w-4 h-4 text-neutral-700" />
               <span>Curriculum Vitae — Ajie Rafli Pamungkas</span>
