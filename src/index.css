@@ -18,31 +18,50 @@
   color: #fafafa;
 }
 
-/* Print styles — only show CV modal */
+/* Print styles — only show CV */
 @media print {
-  body * {
+  /* Hide everything in body */
+  body > * {
     visibility: hidden !important;
   }
 
+  /* Show CV content */
   .cv-print-area,
   .cv-print-area * {
     visibility: visible !important;
   }
 
+  /* Reset backdrop to just show content */
   .cv-print-area {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
+    position: static !important;
+    display: block !important;
     background: white !important;
   }
 
+  /* Hide the modal overlay/backdrop on print */
+  .cv-print-area > div:first-child {
+    position: static !important;
+    background: white !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  /* The actual CV card */
+  .cv-print-area > div:first-child > div {
+    position: static !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Page setup */
   @page {
     size: A4;
-    margin: 15mm 15mm 15mm 15mm;
+    margin: 12mm 15mm;
   }
 }

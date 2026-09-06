@@ -128,6 +128,7 @@ export default function App() {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 selection:bg-neutral-200 dark:selection:bg-neutral-800 selection:text-neutral-900 dark:selection:text-white font-sans transition-colors duration-200">
       {/* Top Navbar */}
       <Navbar
@@ -177,12 +178,13 @@ export default function App() {
         onScrollToTop={handleScrollToTop}
         onNavigate={handleNavigate}
       />
-
-      {/* High-Fidelity Printable CV Modal */}
-      <CvModal
-        isOpen={isCvModalOpen}
-        onClose={() => setIsCvModalOpen(false)}
-      />
     </div>
+
+    {/* High-Fidelity Printable CV Modal — rendered outside main div for clean print */}
+    <CvModal
+      isOpen={isCvModalOpen}
+      onClose={() => setIsCvModalOpen(false)}
+    />
+    </>
   );
 }
