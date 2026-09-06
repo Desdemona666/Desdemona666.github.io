@@ -22,11 +22,11 @@
     margin: 12mm 15mm;
   }
 
-  body > * {
+  #root > * {
     display: none !important;
   }
 
-  .cv-print-area {
+  #root > .cv-print-area {
     display: block !important;
     position: static !important;
     background: white !important;
