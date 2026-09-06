@@ -52,8 +52,8 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-neutral-950/85 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 print:p-0 print:bg-white">
-      <div className="relative bg-white text-neutral-900 rounded-lg w-full max-w-4xl max-h-[92vh] overflow-y-auto shadow-2xl border border-neutral-300 print:border-none print:shadow-none print:max-h-none print:rounded-none">
+    <div className="cv-print-area fixed inset-0 z-50 overflow-y-auto bg-neutral-950/85 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 print:p-0 print:bg-white">
+      <div className="relative bg-white text-neutral-900 rounded-lg w-full max-w-4xl max-h-[92vh] overflow-y-auto shadow-2xl border border-neutral-300 print:border-none print:shadow-none print:max-h-none print:rounded-none print:w-full print:max-w-none">
         {/* Modal Top Control Bar (Hidden on print) */}
         <div className="sticky top-0 z-10 bg-neutral-100/95 backdrop-blur-md px-6 py-3 border-b border-neutral-300 flex items-center justify-between print:hidden">
           <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
@@ -85,10 +85,10 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
           </div>
         </div>
 
-        {/* Resume Sheet Body (Formatted accurately to user's CV) */}
-        <div className="p-8 sm:p-12 font-sans space-y-6 text-neutral-800 print:p-0">
+        {/* Resume Sheet Body */}
+        <div className="p-8 sm:p-12 print:p-[15mm] font-sans space-y-5 text-neutral-800">
           {/* Header */}
-          <div className="border-b border-neutral-900 pb-4">
+          <div className="border-b-2 border-neutral-900 pb-3">
             <h1 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-neutral-950">
               {contactInfo.name}
             </h1>
@@ -96,13 +96,13 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
               {contactInfo.title}
             </p>
             <p className="text-xs text-neutral-600 mt-2 font-mono">
-              {contactInfo.location} • {contactInfo.phone} • {contactInfo.email}
+              {contactInfo.location} &bull; {contactInfo.phone} &bull; {contactInfo.email}
             </p>
           </div>
 
           {/* Ringkasan Profesional */}
-          <section className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+          <section className="space-y-1.5">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5">
               Ringkasan Profesional
             </h2>
             <p className="text-xs leading-relaxed text-neutral-700 text-justify">
@@ -111,13 +111,13 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
           </section>
 
           {/* Pengalaman Kerja */}
-          <section className="space-y-4">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+          <section className="space-y-3">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5">
               Pengalaman Kerja
             </h2>
 
             {workExperiences.map((exp) => (
-              <div key={exp.id} className="space-y-1.5 text-xs">
+              <div key={exp.id} className="space-y-1 text-xs">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
                   <div>
                     <span>{exp.role}</span>
@@ -128,9 +128,9 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
                 <div className="text-[11px] text-neutral-500 italic">
                   {exp.location}
                 </div>
-                <ul className="list-disc list-outside pl-4 space-y-1 text-neutral-700">
+                <ul className="list-disc list-outside pl-4 space-y-0.5 text-neutral-700">
                   {exp.bullets.map((b, idx) => (
-                    <li key={idx} className="leading-normal">{b}</li>
+                    <li key={idx} className="leading-snug">{b}</li>
                   ))}
                 </ul>
               </div>
@@ -138,13 +138,13 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
           </section>
 
           {/* Pendidikan & Sertifikasi */}
-          <section className="space-y-3">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+          <section className="space-y-2">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5">
               Pendidikan & Sertifikasi
             </h2>
 
             {educations.map((edu) => (
-              <div key={edu.id} className="space-y-1 text-xs">
+              <div key={edu.id} className="space-y-0.5 text-xs">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
                   <span>{edu.institution}</span>
                   <span className="text-neutral-600 text-[11px] font-mono font-medium">{edu.period}</span>
@@ -167,13 +167,13 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
           </section>
 
           {/* Keahlian Teknis */}
-          <section className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+          <section className="space-y-1.5">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5">
               Keahlian Teknis
             </h2>
-            <div className="grid grid-cols-1 gap-1.5 text-xs">
+            <div className="grid grid-cols-1 gap-1 text-xs">
               {skillGroups.map((sg) => (
-                <div key={sg.category} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                <div key={sg.category} className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
                   <span className="font-bold text-neutral-900 w-44 shrink-0 font-mono">{sg.category}</span>
                   <span className="text-neutral-700">{sg.skills.join(', ')}</span>
                 </div>
@@ -182,11 +182,11 @@ ${spokenLanguages.map(l => `${l.language}: ${l.level}`).join('\n')}
           </section>
 
           {/* Bahasa */}
-          <section className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-1">
+          <section className="space-y-1.5">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral-950 border-b border-neutral-300 pb-0.5">
               Bahasa
             </h2>
-            <div className="space-y-1 text-xs text-neutral-700">
+            <div className="space-y-0.5 text-xs text-neutral-700">
               {spokenLanguages.map((l) => (
                 <div key={l.language} className="flex items-center gap-2">
                   <span className="font-semibold text-neutral-900 w-40">{l.language}:</span>

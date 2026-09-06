@@ -89,9 +89,9 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Python", "SQL", "R"]
   },
   {
-    category: "Machine Learning & AI",
+    category: "Machine Learning",
     iconName: "BrainCircuit",
-    skills: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost", "LightGBM", "LangChain / GraphRAG"]
+    skills: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost", "LightGBM", "Statsmodel", "LangChain / GraphRAG"]
   },
   {
     category: "Data Engineering",

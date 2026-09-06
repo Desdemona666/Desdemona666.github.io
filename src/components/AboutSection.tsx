@@ -5,7 +5,7 @@ export const AboutSection: React.FC = () => {
   const pillars = [
     {
       title: "Predictive Modeling & Machine Learning",
-      description: "Mengembangkan model prediktif machine learning (LightGBM, XGBoost, Scikit-learn) dengan feature engineering sistematis, validasi silang adaptif, serta interpretasi model berbasis Machine Learning Explainability."
+      description: "Mengembangkan model prediktif machine learning (LightGBM, XGBoost, Scikit-learn, Statsmodel) dengan feature engineering sistematis, validasi silang adaptif, serta interpretasi model berbasis Machine Learning Explainability."
     },
     {
       title: "RAG & Graph RAG",
