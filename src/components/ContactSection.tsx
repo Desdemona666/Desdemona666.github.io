@@ -26,10 +26,10 @@ export const ContactSection: React.FC = () => {
       const timeStr = now.toLocaleDateString('en-GB') + ' ' + now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        'service_5lr6r9j',
+        'template_dqsavx4',
         { name, email, subject, message, time: timeStr },
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+        { publicKey: 'Gr_xr8CYXNhiLcMng' }
       );
       setIsSubmitted(true);
       setName('');
